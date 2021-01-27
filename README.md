@@ -1,2 +1,2 @@
-# classifier
-rough code/snippets for JSON classifier
+# classifier-codebase
+rough codebase for ML JSON model classifier
