@@ -1,6 +1,10 @@
 import debuglib
 
 unqiueOutputs = []
+mins = []
+maxes = []
+means = []
+medians = []
 
 def run(inputs, outputs):
     
