@@ -1,4 +1,5 @@
 import debuglib
+import engine
 
 # reads the file
 filepath = "wab.csv"
@@ -46,3 +47,5 @@ print(outputs)
 print("")
 print("data:")
 debuglib.print2dArr(data)
+
+engine.run(data, outputs)
