@@ -1,3 +1,6 @@
+import debuglib
+
+# reads the file
 filepath = "wab.csv"
 f = open(filepath, "r")
 lines = []
@@ -6,31 +9,40 @@ for x in f:
     line = x.replace("\n", "")
     lines.append(line)
 
-data = []
+# transfers split lines into data:
+rawData = []
 
 i = 1
 while i < len(lines):
     l = lines[i].split(",")
-    data.append(l)
+    rawData.append(l)
     i+=1
 
+print("raw data:")
+debuglib.print2dArr(rawData)
 
-# Access values in first row (example):
-j = 0
-while j < len(data):
-    k = 0
-    sum = 0
-    while k < len(data[j]):
-        sum += float(data[j][k])
-        k+=1
-    print("sum of row " + str(j) +": " + str(sum))
-    j+=1
+# gets rid of labels and creates output data:
+outputs = []
+data = []
 
+i = 0
+while i < len(rawData):
+    outputs.append(rawData[i][len(rawData[i]) - 1])
+    
+    j = 0
+    arr = []
+    while j < (len(rawData[i]) - 1):
+        arr.append(rawData[i][j])
+        j+=1
+    
+    data.append(arr)
 
+    i+=1
 
-'''
-Traditional for loop with indexes (refactor nested while loop):
-colors = ["red", "green", "blue", "purple"]
-for i in range(len(colors)):
-    print(str(i) + ": " + colors[i])
-'''
+print("")
+print("outputs: ")
+print(outputs)
+
+print("")
+print("data:")
+debuglib.print2dArr(data)
