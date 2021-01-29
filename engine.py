@@ -16,3 +16,16 @@ def run(inputs, outputs):
     print("")
     print("unique outputs")
     print(unqiueOutputs)
+
+    # prints the columns of inputs out (use this code to find min and max values):
+    print("")
+    print("columns:")
+
+    col = 0
+    while col < len(inputs[0]):
+        row = 0
+        while row < len(inputs):
+            print(inputs[row][col])
+            row+=1
+        print("\n")
+        col+=1
